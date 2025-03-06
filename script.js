@@ -31,3 +31,7 @@ function calculateTip() {
     `;
 };
 
+//returns tip total
+function calculateTip(billTotal, tipPercentage) {
+  return billTotal * (tipPercentage / 100);
+}
