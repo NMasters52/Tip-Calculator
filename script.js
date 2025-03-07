@@ -1,7 +1,6 @@
 const billTotalInput = document.getElementById('billTotal');
 const tipPercentageInput = document.getElementById('tipPercentage');
-//const calculateBtn = document.getElementById('calculateBtn');
-const resultDiv = document.getElementById('result');
+
 
 const elements = {
   billTotal: document.getElementById('billTotal'),
