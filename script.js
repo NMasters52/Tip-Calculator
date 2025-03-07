@@ -1,7 +1,4 @@
-const billTotalInput = document.getElementById('billTotal');
-const tipPercentageInput = document.getElementById('tipPercentage');
-
-
+//saving elements into an object
 const elements = {
   billTotal: document.getElementById('billTotal'),
   tipPercentage: document.getElementById('tipPercentage'),
@@ -14,7 +11,7 @@ function displayResult(message){
   return elements.result.innerHTML = message;
 };
 
-//create event 
+//creates event listner 
 function initializeApp() {
   elements.calculateBtn.addEventListener('click', calculateTip);
 }
@@ -33,17 +30,17 @@ function calculateTipAmount(bill, tipPercent) {
  return bill * (tipPercent / 100);
 };
 
-//calculate total of bill and tip 
+//calculate total of bill and tip combined
 function calculateTotalAmount(bill, tip) {
 return bill + tip;
 };
 
-//create function to calculate tip
+//main calculation function
 function calculateTip() {
   //take the bill total
-  const billTotal = parseFloat(billTotalInput.value);
+  const billTotal = parseFloat(elements.billTotal.value);
   //take the tip percentage
-  const tipPercentage = parseFloat(tipPercentageInput.value);
+  const tipPercentage = parseFloat(elements.tipPercentage.value);
 
  if (!inputValidation(billTotal, tipPercentage)) return;
 
