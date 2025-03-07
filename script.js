@@ -10,13 +10,22 @@ const elements = {
 };
 
 //displays message to the screen
-function display(message){
+function displayResult(message){
   return elements.result.innerHTML = message;
 };
 
 //create event 
 function initializeApp() {
   elements.calculateBtn.addEventListener('click', calculateTip);
+}
+
+//input validation test
+function inputValidation(bill, tip) {
+  if(isNaN(bill)|| isNaN(tip)) {
+    displayResult("Please add valid inputs");
+    return false;
+  }
+    return true;
 }
 
 
@@ -27,10 +36,7 @@ function calculateTip() {
   //take the tip percentage
   const tipPercentage = parseFloat(tipPercentageInput.value);
 
-  if (isNaN(billTotal) || isNaN(tipPercentage)) {
-    resultDiv.innerText = "Please enter valid numbers"
-    return;
-  };
+ if (!inputValidation(billTotal, tipPercentage)) return;
 
   //formulate the amount
   const tipTotal = billTotal * (tipPercentage / 100);
@@ -42,7 +48,7 @@ function calculateTip() {
   <p>Tip Amount: $${totalAmount.toFixed(2)}</p>`;
 
   //display it to the screen
- display(resultHTML);
+ displayResult(resultHTML);
 };
 
 initializeApp();
