@@ -14,8 +14,11 @@ function display(message){
   return elements.result.innerHTML = message;
 };
 
-//create event for calculate btn
-elements.calculateBtn.addEventListener('click', calculateTip);
+//create event 
+function initializeApp() {
+  elements.calculateBtn.addEventListener('click', calculateTip);
+}
+
 
 //create function to calculate tip
 function calculateTip() {
@@ -41,3 +44,5 @@ function calculateTip() {
   //display it to the screen
  display(resultHTML);
 };
+
+initializeApp();
