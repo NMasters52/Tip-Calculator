@@ -10,6 +10,12 @@ const elements = {
   result: document.getElementById('result')
 };
 
+//displays the calculations on screen
+function display(tipTotal, totalAmount) {
+  return elements.result.innerHTML = `
+   <p>Tip Amount: $${tipTotal.toFixed(2)}</p>
+   <p>Total Amount: $${totalAmount.toFixed(2)}</p>`;
+};
 
 //create event for calculate btn
 elements.calculateBtn.addEventListener('click', calculateTip);
@@ -31,9 +37,6 @@ function calculateTip() {
   //Calculate the total overall
   const totalAmount = tipTotal + billTotal;
 
-  //add it to the screen
-  resultDiv.innerHTML = `
-      <p>Tip Amount: $${tipTotal.toFixed(2)}</p>
-      <p>Total Amount: $${totalAmount.toFixed(2)}</p>
-    `;
+  //display it to the screen
+ display(tipTotal, totalAmount);
 };
