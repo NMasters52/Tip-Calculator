@@ -26,8 +26,17 @@ function inputValidation(bill, tip) {
     return false;
   }
     return true;
-}
+};
 
+//calculate tip
+function calculateTipAmount(bill, tipPercent) {
+ return bill * (tipPercent / 100);
+};
+
+//calculate total of bill and tip 
+function calculateTotalAmount(bill, tip) {
+return bill + tip;
+};
 
 //create function to calculate tip
 function calculateTip() {
@@ -39,9 +48,9 @@ function calculateTip() {
  if (!inputValidation(billTotal, tipPercentage)) return;
 
   //formulate the amount
-  const tipTotal = billTotal * (tipPercentage / 100);
+  const tipTotal = calculateTipAmount(billTotal, tipPercentage);
   //Calculate the total overall
-  const totalAmount = tipTotal + billTotal;
+  const totalAmount = calculateTotalAmount(tipTotal, billTotal)
 
   const resultHTML = `
   <p>Tip Total: $${tipTotal.toFixed(2)}</p>
