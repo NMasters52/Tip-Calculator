@@ -1,11 +1,18 @@
 const billTotalInput = document.getElementById('billTotal');
 const tipPercentageInput = document.getElementById('tipPercentage');
-const calculateBtn = document.getElementById('calculateBtn');
+//const calculateBtn = document.getElementById('calculateBtn');
 const resultDiv = document.getElementById('result');
+
+const elements = {
+  billTotal: document.getElementById('billTotal'),
+  tipPercentage: document.getElementById('tipPercentage'),
+  calculateBtn: document.getElementById('calculateBtn'),
+  result: document.getElementById('result')
+};
 
 
 //create event for calculate btn
-calculateBtn.addEventListener('click', calculateTip);
+elements.calculateBtn.addEventListener('click', calculateTip);
 
 //create function to calculate tip
 function calculateTip() {
@@ -30,8 +37,3 @@ function calculateTip() {
       <p>Total Amount: $${totalAmount.toFixed(2)}</p>
     `;
 };
-
-//returns tip total
-function calculateTip(billTotal, tipPercentage) {
-  return billTotal * (tipPercentage / 100);
-}
